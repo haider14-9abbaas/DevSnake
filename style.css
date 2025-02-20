@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    font-family: 'New Tegomin', serif;
+    background: url("./img/bgimages.png") no-repeat center center; /* Center the background */
+    background-size: cover; /* Ensure the background covers the entire area */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.score-container {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+#scoreBox, #hiscoreBox {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#board {
+    background: linear-gradient(rgb(170, 236, 170), rgb(236, 236, 167));
+    width: 90vmin;
+    height: 90vmin;
+    border: 2px solid black;
+    display: grid;
+    grid-template-rows: repeat(18, 1fr);
+    grid-template-columns: repeat(18, 1fr);
+}
+
+.head {
+    background: linear-gradient(rgb(240, 124, 124), rgb(228, 228, 129));
+    border: 2px solid rgb(34, 4, 34);
+    transform: scale(1.02);
+    border-radius: 9px;
+}
+
+.snake {
+    background-color: purple;
+    border: 0.25vmin solid white;
+    border-radius: 12px;
+}
+
+.food {
+    background: linear-gradient(red, purple);
+    border: 0.25vmin solid black;
+    border-radius: 8px;
+}
+
+/* Footer */
+footer {
+    width: 100%;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+.controls {
+    position: fixed;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.controls div {
+    display: flex;
+    justify-content: center;
+}
+
+.control-btn {
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    font-size: 24px;
+    border: none;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Hide mobile controls by default */
+#mobileControls {
+    display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .score-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    #board {
+        width: 80vmin;
+        height: 80vmin;
+    }
+
+    #scoreBox, #hiscoreBox {
+        font-size: 20px;
+    }
+
+    /* Show mobile controls on smaller screens */
+    #mobileControls {
+        display: block;
+        position: fixed;
+        bottom: 10%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px;
+        padding: 10px;
+    }
+}
+
+@media(max-width: 480px){
+    #board {
+        width: 70vmin;
+        height: 60vmin;
+        margin-bottom: 60px;
+        margin-top: 0px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    #scoreBox, #hiscoreBox {
+        font-size: 18px;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    html, body {
+        background: url("./img/bgimages.png") no-repeat center center; /* Center the background */
+        background-size: cover; /* Ensure the background covers the entire area */
+    }
+}
